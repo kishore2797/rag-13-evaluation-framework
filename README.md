@@ -81,6 +81,17 @@ Each evaluation sample:
 }
 ```
 
+## 📦 Example
+
+A minimal runnable example is in the `example/` folder:
+
+```bash
+cd example
+python example.py
+```
+
+It scores one RAG output with simple faithfulness and relevance heuristics (production uses LLM-as-judge).
+
 ## 📖 What You'll Learn
 
 1. Why you can't improve RAG without measuring it first
