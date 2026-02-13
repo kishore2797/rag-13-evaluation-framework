@@ -1,23 +1,23 @@
-# RAG Tutorial 13 — RAG Evaluation Framework
+# 📏 RAG Tutorial 13 — RAG Evaluation Framework
 
 <p align="center">
-  <a href="https://github.com/BellaBe/mastering-rag"><img src="https://img.shields.io/badge/Series-Mastering_RAG-blue?style=for-the-badge" /></a>
+  <a href="https://github.com/kishore2797/mastering-rag"><img src="https://img.shields.io/badge/Series-Mastering_RAG-blue?style=for-the-badge" /></a>
   <img src="https://img.shields.io/badge/Part-13_of_16-green?style=for-the-badge" />
   <img src="https://img.shields.io/badge/Difficulty-Advanced-orange?style=for-the-badge" />
 </p>
 
-> **Part of the [Mastering RAG](https://github.com/BellaBe/mastering-rag) tutorial series**  
-> Previous: [12 — Graph RAG](https://github.com/BellaBe/rag-12-graph-rag) | Next: [14 — Real-Time Streaming](https://github.com/BellaBe/rag-14-realtime-streaming)
+> **Part of the [Mastering RAG](https://github.com/kishore2797/mastering-rag) tutorial series**  
+> Previous: [12 — Graph RAG](https://github.com/kishore2797/rag-12-graph-rag) | Next: [14 — Real-Time Streaming](https://github.com/kishore2797/rag-14-realtime-streaming)
 
 ---
 
-## Real-World Scenario
+## 🌍 Real-World Scenario
 
 > Your RAG chatbot is live. Users are complaining: "It gives wrong answers sometimes." But which answers are wrong? And why? Is the retrieval bad (wrong chunks), the generation bad (LLM ignores context), or both? You need **automated metrics** — not manual review of 1,000 conversations. This framework gives you three scores per query (faithfulness, relevance, precision) so you can pinpoint failures and prioritize fixes.
 
 ---
 
-## What You'll Build
+## 🏗️ What You'll Build
 
 An evaluation framework that measures RAG output quality using **RAGAS-style metrics**: faithfulness, answer relevance, and context precision — powered by LLM-as-judge. Upload evaluation datasets, run scoring, and view per-sample and aggregate results.
 
@@ -32,7 +32,7 @@ Evaluate:
 Action: Context precision is low → improve retrieval
 ```
 
-## Key Concepts
+## 🔑 Key Concepts
 
 - **Faithfulness**: does the answer only use information from the retrieved context?
 - **Answer relevance**: does the answer actually address the user's question?
@@ -40,14 +40,14 @@ Action: Context precision is low → improve retrieval
 - **LLM-as-judge**: use an LLM to evaluate RAG outputs at scale
 - **Per-sample vs. aggregate**: drill into individual failures or track system-level trends
 
-## Tech Stack
+## 🛠 Tech Stack
 
 | Layer | Technology |
 |-------|-----------|
 | Backend | Python 3.11+ · FastAPI · OpenAI (LLM-as-judge) |
 | Frontend | React 19 · Vite · Tailwind CSS · Recharts |
 
-## Quick Start
+## 🚀 Quick Start
 
 ### Backend
 
@@ -69,7 +69,7 @@ npm run dev
 
 Open http://localhost:5173 — paste/upload evaluation dataset, select metrics, view scores.
 
-## Dataset Format
+## 📋 Dataset Format
 
 Each evaluation sample:
 
@@ -81,7 +81,7 @@ Each evaluation sample:
 }
 ```
 
-## What You'll Learn
+## 📖 What You'll Learn
 
 1. Why you can't improve RAG without measuring it first
 2. The three core RAGAS metrics and what they reveal
@@ -89,13 +89,13 @@ Each evaluation sample:
 4. How to build and curate evaluation datasets
 5. How to interpret scores and decide what to optimize next
 
-## Prerequisites
+## 📋 Prerequisites
 
 - Python 3.11+ and Node.js 18+
 - A working RAG system to evaluate (any from Tutorials 05–12)
 - OpenAI API key (for LLM-as-judge)
 
-## Exercises
+## ✏️ Exercises
 
 1. **Build an eval dataset**: From your Tutorial 05 RAG pipeline, collect 20 query-context-answer triples. Run them through the evaluator. What's your baseline score?
 2. **Improve and re-measure**: Take the lowest-scoring samples, improve the retrieval or prompt, and re-evaluate. Track the improvement.
@@ -103,7 +103,7 @@ Each evaluation sample:
 4. **Human vs. LLM evaluation**: Manually score 10 samples yourself, then compare with the automated scores. Where do they disagree?
 5. **Cross-tutorial comparison**: Evaluate the same queries on Tutorial 05 (basic RAG) vs. Tutorial 09 (with re-ranking). Quantify the improvement.
 
-## Common Mistakes
+## ⚠️ Common Mistakes
 
 | Mistake | Why It Happens | How to Fix |
 |---------|---------------|------------|
@@ -112,7 +112,7 @@ Each evaluation sample:
 | Evaluator scores vary wildly between runs | LLM-as-judge is non-deterministic | Set temperature=0 for the evaluator; average over 3 runs |
 | 100% faithfulness on every sample | Evaluation prompt is too lenient | Make the faithfulness prompt stricter: "Check if EVERY claim in the answer has a supporting sentence in the context" |
 
-## Further Reading
+## 📚 Further Reading
 
 - [RAGAS: Automated Evaluation of Retrieval Augmented Generation](https://arxiv.org/abs/2309.15217) — The RAGAS paper (Es et al., 2023)
 - [RAGAS Documentation](https://docs.ragas.io/) — Official framework documentation
@@ -120,12 +120,12 @@ Each evaluation sample:
 - [LLM-as-Judge: Best Practices](https://arxiv.org/abs/2306.05685) — Research on using LLMs for evaluation (Zheng et al., 2023)
 - [DeepEval](https://docs.confident-ai.com/) — Another RAG evaluation framework for comparison
 
-## Next Steps
+## ➡️ Next Steps
 
-Now that you can measure quality, head to **[Tutorial 14 — Real-Time RAG with Streaming](https://github.com/BellaBe/rag-14-realtime-streaming)** to build production-ready delivery patterns.
+Now that you can measure quality, head to **[Tutorial 14 — Real-Time RAG with Streaming](https://github.com/kishore2797/rag-14-realtime-streaming)** to build production-ready delivery patterns.
 
 ---
 
 <p align="center">
-  <sub>Part of <a href="https://github.com/BellaBe/mastering-rag">Mastering RAG — From Zero to Production</a></sub>
+  <sub>Part of <a href="https://github.com/kishore2797/mastering-rag">Mastering RAG — From Zero to Production</a></sub>
 </p>
